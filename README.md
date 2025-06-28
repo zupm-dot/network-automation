@@ -7,34 +7,7 @@
 
 ---
 
-## 📁 Repository Structure
-
-network-automation/
-├── ansible/
-│ ├── inventories/
-│ │ └── lab/hosts.ini
-│ ├── playbooks/
-│ │ ├── configure_cisco.yml
-│ │ └── deploy_f5_vip.yml
-│ └── roles/
-│ ├── f5_automation/
-│ │ ├── templates/ # Jinja2: VIPs, pools, monitors, certs, upgrades
-│ │ ├── defaults/ # Default variables
-│ │ └── tasks/ # Task logic
-│ └── cisco_automation/
-│ ├── templates/ # Interfaces, VLANs, OSPF, ACLs, DHCP, NETCONF
-│ ├── defaults/
-│ └── tasks/
-├── bash/
-│ ├── f5/f5_check_vip.sh
-│ └── cisco/get_interface_status.sh
-├── python/
-│ ├── f5/example_create_vip.py
-│ └── cisco/example_get_interface_status.py
-├── postman/
-│ ├── f5/f5_basic_collection.json
-│ └── cisco/cisco_basic_collection.json
-└── README.md
+<pre lang="markdown"> ## 📁 Repository Structure ```bash network-automation/ ├── ansible/ │ ├── inventories/ │ │ └── lab/ │ │ └── hosts.ini │ ├── playbooks/ │ │ ├── configure_cisco.yml │ │ └── deploy_f5_vip.yml │ └── roles/ │ ├── f5_automation/ │ │ ├── templates/ # Jinja2: VIPs, pools, monitors, certs, upgrades │ │ ├── defaults/ # Default variables │ │ └── tasks/ # Task logic │ └── cisco_automation/ │ ├── templates/ # Interfaces, VLANs, OSPF, ACLs, DHCP, NETCONF │ ├── defaults/ │ └── tasks/ ├── bash/ │ ├── f5/ │ │ └── f5_check_vip.sh │ └── cisco/ │ └── get_interface_status.sh ├── python/ │ ├── f5/ │ │ └── example_create_vip.py │ └── cisco/ │ └── example_get_interface_status.py ├── postman/ │ ├── f5/ │ │ └── f5_basic_collection.json │ └── cisco/ │ └── cisco_basic_collection.json └── README.md ``` </pre>
 
 ---
 
