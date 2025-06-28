@@ -56,3 +56,67 @@ source venv/bin/activate
 
 # Install required Python dependencies (if needed)
 pip install -r requirements.txt
+```
+
+---
+
+## Usage
+
+- Navigate to `ansible/playbooks/` to run playbooks for network configuration.
+- Add or edit roles in `ansible/roles/` to match your devices and environments.
+- Use scripts under `python/` for API-based automation.
+- Use tools under `bash/` for quick testing and command-line workflows.
+- Import Postman collections under `postman/` to test or demo REST API integrations.
+
+---
+
+## Directory Structure
+
+```
+network-automation/
+├── ansible/                # Ansible roles, playbooks, and inventories
+│   ├── inventories/
+│   ├── playbooks/
+│   └── roles/
+├── bash/                   # Bash utility scripts
+├── python/                 # Python automation scripts
+├── postman/                # Postman collections and environments
+├── README.md               # Project documentation
+├── CONTRIBUTING.md         # Contribution guidelines
+└── requirements.txt        # Python dependency file
+```
+
+---
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. **Fork** this repository  
+2. **Create a new branch**
+   ```bash
+   git checkout -b feature-name
+   ```
+3. **Make your changes and commit**
+   ```bash
+   git commit -m "Describe your change"
+   ```
+4. **Push to your branch**
+   ```bash
+   git push origin feature-name
+   ```
+5. **Open a Pull Request**
+
+### Guidelines
+
+- Follow existing file structure and naming conventions  
+- Test any code or automation artifacts before submission  
+- Do **not** include any sensitive data (passwords, tokens, etc.)  
+- Write clear, meaningful commit messages
+
+---
+
+## License
+
+This project is licensed under the **MIT License**.  
+See the [LICENSE](LICENSE) file for full license details.
