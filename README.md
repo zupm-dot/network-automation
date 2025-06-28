@@ -81,7 +81,7 @@ network-automation/
 cd ansible
 ansible-playbook -i inventories/lab/hosts.ini playbooks/configure_devices.yml
 
-### Directory Structure
+**Directory Structure**
 
 network-automation/
 ├── ansible/                # Ansible roles, playbooks, and inventories
@@ -95,7 +95,7 @@ network-automation/
 ├── CONTRIBUTING.md         # Contribution guidelines
 └── requirements.txt        # Python dependencies
 
-### Contributing
+**Contributing**
 
 Contributions are welcome! Please follow these steps:
 1.Fork the repository
