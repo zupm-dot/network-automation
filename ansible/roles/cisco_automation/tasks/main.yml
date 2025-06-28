@@ -1,0 +1,8 @@
+- name: Configure Interface
+  ios_config:
+    lines: "{{ lookup(template, interface_config.j2).splitlines() }}"
+
+- name: Configure VLAN
+  ios_config:
+    lines: "{{ lookup(template, vlan_config.j2).splitlines() }}"
+

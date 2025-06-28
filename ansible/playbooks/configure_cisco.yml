@@ -1,0 +1,6 @@
+- name: Configure Cisco Devices
+  hosts: cisco_switches
+  gather_facts: no
+  roles:
+    - cisco_automation
+

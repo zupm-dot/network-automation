@@ -1,0 +1,8 @@
+{
+  "name": "{{ monitor_name }}",
+  "send": "{{ send_string }}",
+  "recv": "{{ recv_string }}",
+  "interval": {{ interval | default(5) }},
+  "timeout": {{ timeout | default(16) }},
+  "type": "http"
+}

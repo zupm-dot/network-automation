@@ -1,0 +1,10 @@
+{
+  "info": {
+    "name": "Cisco Basic API Collection",
+    "_postman_id": "cisco-basic-collection-001",
+    "description": "Sample Cisco API calls collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": []
+}
+
