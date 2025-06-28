@@ -44,7 +44,6 @@ network-automation/
 │       └── cisco_basic_collection.json
 └── README.md
 
-
 ---
 
 ## 🚀 Quickstart
