@@ -1,4 +1,4 @@
-# 🧠 Network Automation Toolkit for Projects
+# 🧠 Network Automation Toolkit
 
 - ✅ **Ansible** roles & playbooks
 - 🐍 **Python** scripts for API-driven automation
