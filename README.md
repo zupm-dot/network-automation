@@ -1,92 +1,71 @@
-# 🧠 Network Automation Toolkit
+# Network Automation Toolkit
 
-- ✅ **Ansible** roles & playbooks
-- 🐍 **Python** scripts for API-driven automation
-- 🖥️ **Bash** scripts for fast CLI operations
-- 🔁 **Postman** collections for testing & documenting REST APIs
+Welcome to the **Network Automation Toolkit** repository — a collection of Ansible playbooks, Python scripts, Bash utilities, and Postman collections designed to automate configuration and management of network devices and services.
 
 ---
 
-## 📁 Repository Structure
+## Table of Contents
+
+- [Project Overview](#project-overview)  
+- [Features](#features)  
+- [Getting Started](#getting-started)  
+- [Usage](#usage)  
+- [Directory Structure](#directory-structure)  
+- [Contributing](#contributing)  
+- [License](#license)
+
+---
+
+## Project Overview
+
+This repository aims to simplify network operations by providing reusable automation artifacts for common tasks such as device configuration, API-driven management, and health monitoring. Whether you're managing Cisco, F5, or other vendor devices, these tools will help accelerate your workflows and reduce manual errors.
+
+---
+
+## Features
+
+- **Ansible Playbooks and Roles** for automated device configuration and orchestration  
+- **Python Scripts** to interact with network device APIs and perform custom tasks  
+- **Bash Utilities** for quick CLI-based operations and testing  
+- **Postman Collections** to validate REST API endpoints and speed up API development  
+- Extensible and modular code designed for reuse across multiple environments  
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.x  
+- Ansible 2.9+  
+- Git  
+- Postman (optional, for API testing)  
+
+### Setup
 
 ```bash
+# Clone this repository
+git clone https://github.com/zupm-dot/network-automation.git
+
+# Navigate into the repo
+cd network-automation
 network-automation/
-├── ansible/
+├── ansible/                # Ansible roles, playbooks, and inventories
 │   ├── inventories/
-│   │   └── lab/
-│   │       └── hosts.ini
 │   ├── playbooks/
-│   │   ├── configure_cisco.yml
-│   │   └── deploy_f5_vip.yml
 │   └── roles/
-│       ├── f5_automation/
-│       │   ├── templates/      # Jinja2: VIPs, pools, monitors, certs, upgrades
-│       │   ├── defaults/       # Default variables
-│       │   └── tasks/          # Task logic
-│       └── cisco_automation/
-│           ├── templates/      # Interfaces, VLANs, OSPF, ACLs, DHCP, NETCONF
-│           ├── defaults/
-│           └── tasks/
-├── bash/
-│   ├── f5/
-│   │   └── f5_check_vip.sh
-│   └── cisco/
-│       └── get_interface_status.sh
-├── python/
-│   ├── f5/
-│   │   └── example_create_vip.py
-│   └── cisco/
-│       └── example_get_interface_status.py
-├── postman/
-│   ├── f5/
-│   │   └── f5_basic_collection.json
-│   └── cisco/
-│       └── cisco_basic_collection.json
-└── README.md
+├── bash/                   # Bash utility scripts
+├── python/                 # Python automation scripts
+├── postman/                # Postman collections and environments
+├── README.md               # Project overview and instructions
+├── CONTRIBUTING.md         # Contribution guidelines
+└── requirements.txt        # Python dependencies
 
----
 
-## 🚀 Quickstart
+# Install required Python dependencies (if any)
+pip install -r requirements.txt
 
-### 🔧 Set up a Python environment (optional)
+# Explore the ansible roles and playbooks
+cd ansible
+ansible-playbook -i inventories/lab/hosts.ini playbooks/configure_devices.yml
 
-```bash
-python3 -m venv venv
-source venv/bin/activate
-pip install requests netmiko
-
-📦 Install Ansible
-pip install ansible
-# Or use a requirements.yml file if defined:
-# ansible-galaxy install -r requirements.yml
-
-🧪 Run a Playbook
-ansible-playbook -i ansible/inventories/lab/hosts.ini ansible/playbooks/deploy_f5_vip.yml
-
-🔒 Sensitive Data Handling
-Use group_vars/ to store variables, and Ansible Vault to encrypt secrets:
-
-Example group_vars/all.yml:
-ansible_user: admin
-ansible_password: "{{ vault_admin_password }}"
-
-Encrypt it:
-ansible-vault encrypt ansible/inventories/lab/group_vars/all.yml
-
-Decrypt or edit later:
-ansible-vault edit ansible/inventories/lab/group_vars/all.yml
-
-🧰 Use Cases
-Task	                Tool/Role	        File(s)
-Create F5 VIP	        Ansible + Python	vip.j2, example_create_vip.py
-Cisco VLAN Config	Ansible	                vlan_config.j2
-Code Upgrade on F5	Ansible	                code_upgrade.j2
-Check VIP via CLI	Bash	                f5_check_vip.sh
-Cisco Interface Status	Python	                example_get_interface_status.py
-REST API Testing	Postman	                f5_basic_collection.json
-
-🧠 References
-🌐 Cisco DevNet
-📘 F5 Automation Docs
-⚙️ Ansible for Network Automation
-🧪 Postman API Platform
