@@ -84,6 +84,7 @@ network-automation/
 ├── README.md               # Project documentation
 ├── CONTRIBUTING.md         # Contribution guidelines
 └── requirements.txt        # Python dependency file
+└── requirements.yaml       # Ansible dependency file
 ```
 
 ---
