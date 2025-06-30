@@ -1,0 +1,29 @@
+name: Run F5 Playbook on Role Var Change
+
+on:
+  push:
+    paths:
+      - 'ansible/roles/standard-service.f5.com/defaults/main.yml'
+
+jobs:
+  run-f5-playbook:
+    name: Execute Ansible Playbook
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install Ansible
+        run: |
+          python -m pip install --upgrade pip
+          pip install ansible
+
+      - name: Run F5 Ansible Playbook
+        run: |
+          ansible-playbook playbooks/service.f5.com/standard-service.f5.com.yaml -i ansible/inventories/lab/hosts.ini
