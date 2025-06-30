@@ -37,6 +37,12 @@ subjectAltName = @alt_names
 DNS.1 = my_new_server.self
 ```
 
+Create CSR:
+
+```bash
+openssl req -new -sha256 -nodes -out my_new_server.f5.com.csr -newkey rsa:2048 -keyout my_new_server.f5.key -config <( cat my_new_server.f5.com.txt )
+```
+
 Generate the server private key and CSR using the config file:
 
 ```bash
