@@ -15,6 +15,7 @@ openssl req -new -x509 -days 3650 -key self_ca.key -out self_ca.crt \
 
 Create text file for server configuration DN:
 
+```ini
 [req]
 default_bits = 2048
 prompt = no
@@ -34,6 +35,7 @@ subjectAltName = @alt_names
 
 [alt_names]
 DNS.1 = my_new_server.self
+```
 
 Generate the server private key and CSR using the config file:
 
