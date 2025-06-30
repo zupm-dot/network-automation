@@ -1,14 +1,10 @@
 # F5 Self-Signed Certificate Generation
 
-This repository contains files and instructions to generate a self-signed CA and sign a server certificate with SAN for `my_new_server.self` to use with F5 BIG-IP.
-
 ---
 
-## Steps to generate certificates
+## Option 1: Create a new self-signed CA and sign the server certificate
 
-### Option 1: Create a new self-signed CA and sign the server certificate
-
-#### 1. Generate the CA private key and self-signed certificate (unencrypted):
+### 1. Generate the CA private key and self-signed certificate (unencrypted):
 
 ```bash
 openssl genrsa -out self_ca.key 4096
