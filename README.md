@@ -79,7 +79,7 @@ network-automation/
 │   ├── playbooks/
 │   └── roles/
 ├── bash/                   # Bash utility scripts
-├── cert/                   # Certificate creation and signing
+├── certs/                   # Certificate creation and signing
 ├── python/                 # Python automation scripts
 ├── postman/                # Postman collections and environments
 ├── README.md               # Project documentation
