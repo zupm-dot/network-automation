@@ -13,6 +13,30 @@ openssl req -new -x509 -days 3650 -key self_ca.key -out self_ca.crt \
   -subj "/C=US/ST=NY/L=Buffalo/O=My Org/CN=My Self-Signed CA"
 ```
 
+Create text file for server configuration DN:
+
+```bash
+[req]
+default_bits = 2048
+prompt = no
+default_md = sha256
+req_extensions = req_ext
+distinguished_name = dn
+
+[dn]
+C=US
+ST=NY
+L=Buffalo
+O=My Org
+CN=my_new_server.self
+
+[req_ext]
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = my_new_server.self
+```
+
 Generate the server private key and CSR using the config file:
 
 ```bash
