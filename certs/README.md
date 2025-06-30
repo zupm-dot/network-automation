@@ -1,4 +1,4 @@
-# F5 Self-Signed Certificate Generation
+# Self-Signed Certificate Generation
 
 This repository contains files and instructions to generate a self-signed CA and sign a server certificate with SAN for `my_new_server.self` to use with F5 BIG-IP.
 
