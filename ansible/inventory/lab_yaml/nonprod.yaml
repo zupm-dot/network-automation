@@ -1,14 +1,14 @@
 all:
   hosts:
   children:
-    dc-1:
+    dc_1:
       hosts:
-        lab-a.company.com:
-          data_center: sdc-1
+        dc_lab_1.f5.com:
+          data_center: dc-1
           sync_group: LAB-Device_Group
           current_image: BIGIP-17.1.2.1-0.0.2.iso
         
-        lab-b.company.com:
-          data_center: sdc-1
+        dc_lab_2.f5.com:
+          data_center: dc-1
           sync_group: LAB-Device_Group
           current_image: BIGIP-17.1.2.1-0.0.2.iso

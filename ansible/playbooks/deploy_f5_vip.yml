@@ -1,6 +1,0 @@
-- name: Deploy F5 VIP and Pool
-  hosts: f5_lbs
-  gather_facts: no
-  roles:
-    - f5_automation
-
