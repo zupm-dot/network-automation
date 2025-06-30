@@ -1,29 +1,32 @@
 # F5 Self-Signed Certificate Generation
 
----
+This repository contains files and instructions to generate a self-signed CA and sign a server certificate with SAN for `my_new_server.self` to use with F5 BIG-IP.
 
-## Option 1: Create a new self-signed CA and sign the server certificate
+Option 1: Create a new self-signed CA and sign the server certificate
 
-### 1. Generate the CA private key and self-signed certificate (unencrypted):
+Generate the CA private key and self-signed certificate (unencrypted):
 
 ```bash
 openssl genrsa -out self_ca.key 4096
 
 openssl req -new -x509 -days 3650 -key self_ca.key -out self_ca.crt \
   -subj "/C=US/ST=NY/L=Buffalo/O=My Org/CN=My Self-Signed CA"
-2. Generate the server private key and CSR using the config file:
+Generate the server private key and CSR using the config file:
+
 bash
 Copy
 Edit
 openssl req -new -sha256 -nodes -out my_new_server.self.csr -newkey rsa:2048 \
   -keyout my_new_server.self.key -config my_new_server.self.txt
-3. Sign the CSR with the CA certificate and key, including SAN extension:
+Sign the CSR with the CA certificate and key, including SAN extension:
+
 bash
 Copy
 Edit
 openssl x509 -req -in my_new_server.self.csr -CA self_ca.crt -CAkey self_ca.key -CAcreateserial \
   -out my_new_server.self.crt -days 730 -extfile v3.ext
-4. Verify the generated certificate:
+Verify the generated certificate:
+
 bash
 Copy
 Edit
@@ -31,15 +34,18 @@ openssl x509 -in my_new_server.self.crt -text -noout
 Look for the Subject Alternative Name section in the output to confirm SAN is included.
 
 Option 2: Sign a server certificate using an existing CA certificate and key
+
 If you already have a CA certificate and private key (for example, existing_ca.crt and existing_ca.key), you can sign the CSR without generating a new CA.
 
-1. Generate the server private key and CSR (same as above):
+Generate the server private key and CSR (same as above):
+
 bash
 Copy
 Edit
 openssl req -new -sha256 -nodes -out my_new_server.self.csr -newkey rsa:2048 \
   -keyout my_new_server.self.key -config my_new_server.self.txt
-2. Sign the CSR with your existing CA certificate and key, including SAN extension:
+Sign the CSR with your existing CA certificate and key, including SAN extension:
+
 bash
 Copy
 Edit
@@ -47,8 +53,30 @@ openssl x509 -req -in my_new_server.self.csr -CA existing_ca.crt -CAkey existing
   -out my_new_server.self.crt -days 730 -extfile v3.ext
 Note: You will be prompted for the CA key password if the CA key is encrypted.
 
-3. Verify the generated certificate:
+Verify the generated certificate:
+
 bash
 Copy
 Edit
 openssl x509 -in my_new_server.self.crt -text -noout
+Files description:
+
+my_new_server.self.txt: OpenSSL config file to generate the CSR with SAN
+
+v3.ext: Extension file used when signing the CSR to include SANs in the certificate
+
+self_ca.key and self_ca.crt: The generated CA private key and self-signed certificate (Option 1)
+
+my_new_server.self.key and my_new_server.self.crt: The server private key and signed certificate
+
+my_new_server.self.csr: The certificate signing request
+
+Notes:
+
+The CA key in Option 1 is unencrypted for simplicity; protect it accordingly.
+
+Adjust CN and SAN values in the config file as needed for your environment.
+
+When using an existing CA, ensure the existing_ca.key and existing_ca.crt paths are correct.
+
+If the CA key is encrypted, you will be prompted for its password during signing.
