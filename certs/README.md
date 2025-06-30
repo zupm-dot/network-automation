@@ -33,6 +33,8 @@ Verify the generated certificate:
 openssl x509 -in my_new_server.self.crt -text -noout
 ```
 
+
+
 Option 2: Sign a server certificate using an existing CA certificate and key
 
 Generate the server private key and CSR (same as above):
@@ -55,6 +57,8 @@ Verify the generated certificate:
 ```bash
 openssl x509 -in my_new_server.self.crt -text -noout
 ```
+
+
 
 Files description:
 - my_new_server.self.txt: OpenSSL config file to generate the CSR with SAN
