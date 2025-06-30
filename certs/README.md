@@ -31,9 +31,9 @@ Verify the generated certificate:
 
 ```bash
 openssl x509 -in my_new_server.self.crt -text -noout
+
+
 ```
-
-
 
 Option 2: Sign a server certificate using an existing CA certificate and key
 
