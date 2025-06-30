@@ -3,12 +3,17 @@ all:
   children:
     dc_1:
       hosts:
-        dc_lab_1.f5.com:
-          data_center: dc-1
-          sync_group: LAB-Device_Group
-          current_image: BIGIP-17.1.2.1-0.0.2.iso
+        # dc_lab_1.f5.com:
+        #   data_center: dc-1
+        #   sync_group: LAB-Device_Group
+        #   current_image: BIGIP-17.1.2.1-0.0.2.iso
         
-        dc_lab_2.f5.com:
-          data_center: dc-1
+        # dc_lab_2.f5.com:
+        #   data_center: dc-1
+        #   sync_group: LAB-Device_Group
+        #   current_image: BIGIP-17.1.2.1-0.0.2.iso
+
+        sdc-1-nonprod-lb-2:
+          data_center: sdc
           sync_group: LAB-Device_Group
           current_image: BIGIP-17.1.2.1-0.0.2.iso
