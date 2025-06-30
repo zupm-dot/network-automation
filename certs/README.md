@@ -46,21 +46,21 @@ openssl req -new -sha256 -nodes -out my_new_server.f5.com.csr -newkey rsa:2048 -
 Generate the server private key and CSR using the config file:
 
 ```bash
-openssl req -new -sha256 -nodes -out my_new_server.self.csr -newkey rsa:2048 \
-  -keyout my_new_server.self.key -config my_new_server.self.txt
+openssl req -new -sha256 -nodes -out  my_new_server.f5.com.csr -newkey rsa:2048 \
+  -keyout  my_new_server.f5.com.key -config  my_new_server.f5.com.txt
 ```
 
 Sign the CSR with the CA certificate and key, including SAN extension:
 
 ```bash
-openssl x509 -req -in my_new_server.self.csr -CA self_ca.crt -CAkey self_ca.key -CAcreateserial \
-  -out my_new_server.self.crt -days 730 -extfile v3.ext
+openssl x509 -req -in  my_new_server.f5.com.csr -CA self_ca.crt -CAkey self_ca.key -CAcreateserial \
+  -out  my_new_server.f5.com.crt -days 730 -extfile v3.ext
 ```
 
 Verify the generated certificate:
 
 ```bash
-openssl x509 -in my_new_server.self.crt -text -noout
+openssl x509 -in  my_new_server.f5.com.crt -text -noout
 
 
 ```
@@ -70,22 +70,22 @@ Option 2: Sign a server certificate using an existing CA certificate and key
 Generate the server private key and CSR (same as above):
 
 ```bash
-openssl req -new -sha256 -nodes -out my_new_server.self.csr -newkey rsa:2048 \
-  -keyout my_new_server.self.key -config my_new_server.self.txt
+openssl req -new -sha256 -nodes -out  my_new_server.f5.com.csr -newkey rsa:2048 \
+  -keyout  my_new_server.f5.com.key -config  my_new_server.f5.com.txt
 ```
 
 Sign the CSR with your existing CA certificate and key, including SAN extension:
 
 ```bash
-openssl x509 -req -in my_new_server.self.csr -CA existing_ca.crt -CAkey existing_ca.key -CAcreateserial \
-  -out my_new_server.self.crt -days 730 -extfile v3.ext
+openssl x509 -req -in  my_new_server.f5.com.csr -CA existing_ca.crt -CAkey existing_ca.key -CAcreateserial \
+  -out  my_new_server.f5.com.crt -days 730 -extfile v3.ext
 ```
 Note: You will be prompted for the CA key password if the CA key is encrypted.
 
 Verify the generated certificate:
 
 ```bash
-openssl x509 -in my_new_server.self.crt -text -noout
+openssl x509 -in  my_new_server.f5.com.crt -text -noout
 ```
 
 
