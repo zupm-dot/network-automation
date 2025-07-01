@@ -10,8 +10,9 @@ Welcome to the **Network Automation Toolkit** — a collection of Ansible playbo
 - [Features](#features)  
 - [Getting Started](#getting-started)  
 - [Usage](#usage)  
-- [Directory Structure](#directory-structure)  
-- [Contributing](#contributing)  
+- [Directory Structure](#directory-structure)
+- [Community Poll](#community-poll)
+- [Contributing](#contributing)
 - [License](#license)
 
 ---
@@ -88,6 +89,16 @@ network-automation/
 ├── CONTRIBUTING.md         # Contribution guidelines
 └── requirements.txt        # Python dependency file
 └── requirements.yaml       # Ansible dependency file
+```
+
+---
+
+## Community Poll
+``` markdown
+We want to know what tools network engineers primarily use for automation!  
+Please [vote in our GitHub Discussions poll](https://github.com/zupm-dot/network-automation/discussions/7) and share your thoughts.
+
+Your input helps us tailor this toolkit to real-world needs.
 ```
 
 ---
