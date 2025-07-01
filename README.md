@@ -76,7 +76,7 @@ pip install -r requirements.txt
 ```
 network-automation/
 ├── .github/
-│   ├── inventories/        # GitGub workflows
+│   ├── workflows/          # GitGub workflows
 ├── ansible/                # Ansible roles, playbooks, and inventories
 │   ├── inventories/
 │   ├── playbooks/
