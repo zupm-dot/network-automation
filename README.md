@@ -76,7 +76,7 @@ pip install -r requirements.txt
 ```
 network-automation/
 ├── .github/
-    ├── workflows/          # GitGub workflows
+│   ├── inventories/        # GitGub workflows
 ├── ansible/                # Ansible roles, playbooks, and inventories
 │   ├── inventories/
 │   ├── playbooks/
@@ -94,7 +94,10 @@ network-automation/
 ---
 
 ## Community Poll
-``` markdown
+
+```markdown
+## Community Poll
+
 We want to know what tools network engineers primarily use for automation!  
 Please [vote in our GitHub Discussions poll](https://github.com/zupm-dot/network-automation/discussions/7) and share your thoughts.
 
