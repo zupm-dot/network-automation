@@ -95,12 +95,10 @@ network-automation/
 
 ## Community Poll
 
-```markdown
 We want to know what tools network engineers primarily use for automation!  
 Please [vote in our GitHub Discussions poll](https://github.com/zupm-dot/network-automation/discussions/7) and share your thoughts.
 
 Your input helps us tailor this toolkit to real-world needs.
-```
 
 ---
 
