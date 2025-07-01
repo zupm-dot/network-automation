@@ -80,7 +80,7 @@ network-automation/
 ├── ansible/                # Ansible roles, playbooks, and inventories
 │   ├── inventories/
 │   ├── playbooks/
-│   └── roles/
+│   ├── roles/
 ├── bash/                   # Bash utility scripts
 ├── certs/                  # Certificate creation and signing
 ├── python/                 # Python automation scripts
